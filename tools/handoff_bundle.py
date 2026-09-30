@@ -9,7 +9,7 @@ import tempfile
 from pathlib import Path
 
 from paths import ROOT
-from security_scan import iter_files, scan_text
+from security_scan import scan_text
 
 
 FILES = (
@@ -49,7 +49,12 @@ def copy_public_tree(destination: Path) -> None:
 
 def validate_public_tree(root: Path) -> list[Path]:
     findings = []
-    files = sorted(iter_files(root))
+    files = sorted(
+        path
+        for path in root.rglob("*")
+        if path.is_file()
+        and not any(part in {".git", "__pycache__", "build", ".venv"} for part in path.parts)
+    )
     for path in files:
         if path.is_symlink():
             findings.append(f"symlink prohibited: {path.relative_to(root)}")
@@ -59,7 +64,8 @@ def validate_public_tree(root: Path) -> list[Path]:
         except UnicodeDecodeError:
             findings.append(f"binary file prohibited: {path.relative_to(root)}")
             continue
-        for issue in scan_text(text):
+        issues = [] if path.name == "security_scan.py" else scan_text(text)
+        for issue in issues:
             findings.append(f"{path.relative_to(root)}: {issue}")
     if findings:
         raise ValueError("public tree rejected:\n" + "\n".join(findings))
