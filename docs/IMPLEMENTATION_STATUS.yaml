@@ -19,6 +19,8 @@ milestones:
       - reference/manifest.yaml
       - tools/susnet_lab_mcp/server.py
       - templates/ui/index.html
+      - docs/USER_CREDENTIALS.md
+      - https://github.com/gabe0000/susnet-appliance/commit/d53c592
     acceptance:
       - make doctor
       - make lint

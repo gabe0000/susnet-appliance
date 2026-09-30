@@ -46,3 +46,26 @@ the earlier one; do not rewrite history after implementation begins.
   without copying personalized live-SusNet pages or depending on a CDN.
 - **Rejected:** Reusing the public web01 site directly or letting each feature
   invent its own controls.
+
+## ADR-0005 — Five-part public product surface
+
+- **Date:** 2026-09-29
+- **Status:** accepted
+- **Decision:** Keep the developer handoff focused on AllStar, DVSwitch, APRS,
+  MeshCore, and local TTS. MeshCore-to-TTS is prohibited in version 1.
+- **Reason:** These are the appliance capabilities the owner wants carried
+  forward. Unrelated experiments make the handoff harder to understand and
+  increase the chance of publishing private material.
+- **Rejected:** Copying the mixed development workspace or historical
+  experiments into the appliance repository.
+
+## ADR-0006 — Standalone public bootstrap repository
+
+- **Date:** 2026-09-29
+- **Status:** accepted
+- **Decision:** Publish only the generated allowlisted tree to the standalone
+  public `gabe0000/susnet-appliance` repository.
+- **Reason:** A separate repository gives the developer a clean history and
+  makes the public boundary inspectable and repeatable.
+- **Rejected:** Making the broader HP ProDesk and web infrastructure repository
+  public.
