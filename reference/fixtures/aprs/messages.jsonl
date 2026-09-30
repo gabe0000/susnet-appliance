@@ -1,0 +1,2 @@
+{"schema_version":1,"source":"synthetic","direction":"inbound","station":"TEST-1","message_id":"A01","text":"Synthetic APRS message"}
+{"schema_version":1,"source":"synthetic","direction":"outbound","station":"DEMO-2","message_id":"A02","text":"Synthetic acknowledgment test"}

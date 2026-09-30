@@ -1,0 +1,32 @@
+schema_version: 1
+collection:
+  collector: tools/reference_collector.py
+  collector_version: 1
+  collected_at: 2026-09-29T00:00:00Z
+  source: synthetic-bootstrap-fixtures
+  review_status: synthetic
+signature:
+  status: development-unsigned
+  namespace: susnet-reference
+  detached_file: null
+policy:
+  contains_operator_credentials: false
+  contains_personal_callsigns: false
+  contains_personal_node_numbers: false
+  contains_private_addresses: false
+  contains_unreviewed_logs: false
+files:
+  - path: fixtures/system/packages.json
+    sha256: 19807c20133aa0ce14f1150d08f6d3143793edcad5aa63cc1c8dfe64aee30c13
+  - path: fixtures/system/services.json
+    sha256: 687b7141e265ba52ea6455aec7b7c62fe3194e4565e4828526a49378e625e35c
+  - path: fixtures/system/hardware.json
+    sha256: 19b7f9d49c9789c129357af3560dc7b18ab1594afba1cf791d77760abc146d95
+  - path: fixtures/system/config-structure.json
+    sha256: 86377a76fd07810a1dfbd7b685a007f0c3339d53fc1688c2fbf5d83e418db208
+  - path: fixtures/aprs/messages.jsonl
+    sha256: 969607049c6d95d7fb54065c3eaf2a26094a1497bf1ac1403ede2fef6fe8557a
+  - path: fixtures/meshcore/messages.json
+    sha256: 75d62c0945f987a1bbf27ad1f499b13c651129f590f855ad52daa7d85fcce0df
+  - path: fixtures/tts/announcements.json
+    sha256: 14b93d206cdecf5309033ef5f8fb034cb731768482502d97656bc10ffbdddc2b

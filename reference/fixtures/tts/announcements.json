@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "announcements": [
+    {
+      "event": "aprs-message",
+      "text": "Synthetic message received from test station",
+      "route": "local-radio",
+      "enabled": false,
+      "max_seconds": 8
+    }
+  ],
+  "prohibited_sources": ["meshcore-message"],
+  "defaults": {"enabled": false, "rate_limit_per_minute": 2}
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "services": [
+    {"name": "asterisk", "active": "active", "sub": "running"},
+    {"name": "analog_bridge", "active": "inactive", "sub": "dead"},
+    {"name": "mmdvm_bridge", "active": "inactive", "sub": "dead"},
+    {"name": "susnet-aprs", "active": "active", "sub": "running"},
+    {"name": "susnet-meshcore", "active": "active", "sub": "running"},
+    {"name": "susnet-tts", "active": "inactive", "sub": "dead"}
+  ]
+}

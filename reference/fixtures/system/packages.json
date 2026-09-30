@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "packages": [
+    {"name": "asl3", "version": "0.0.synthetic"},
+    {"name": "analog-bridge", "version": "0.0.synthetic"},
+    {"name": "mmdvm-bridge", "version": "0.0.synthetic"}
+  ]
+}

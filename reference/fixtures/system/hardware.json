@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "board": "Raspberry Pi 4B lab fixture",
+  "usb": [
+    {"vid": "0d8c", "pid": "0012", "role": "AURSINC-compatible audio fixture", "serial": null},
+    {"vid": "10c4", "pid": "ea60", "role": "Heltec V3 CP2102 fixture", "serial": "SYNTHETIC-SERIAL"}
+  ],
+  "alsa": [
+    {"logical_name": "radio-interface", "direction": ["capture", "playback"]}
+  ],
+  "rf_inhibited": true
+}

@@ -1,0 +1,65 @@
+schema_version: 1
+project: susnet-appliance
+updated: 2026-09-29
+release_gate: bootstrap
+allowed_statuses:
+  - pending
+  - in_progress
+  - blocked
+  - complete
+milestones:
+  - id: M0-agent-bootstrap
+    status: complete
+    depends_on: []
+    evidence:
+      - AGENTS.md
+      - Makefile
+      - .codex/config.toml
+      - docs/DEVELOPER_BOOTSTRAP.md
+      - reference/manifest.yaml
+      - tools/susnet_lab_mcp/server.py
+      - templates/ui/index.html
+    acceptance:
+      - make doctor
+      - make lint
+      - make unit
+      - make integration
+  - id: M1-qualification-spike
+    status: pending
+    depends_on:
+      - M0-agent-bootstrap
+    blockers:
+      - Exact AURSINC revision, radio arrangement, wiring, and PTT polarity are not recorded.
+      - Trixie software vocoder and DVSwitch compatibility is not proven on a Pi 4B.
+      - Heltec V3 US profile parameters and firmware hash are not frozen.
+    evidence: []
+  - id: M2-build-foundation
+    status: blocked
+    depends_on:
+      - M1-qualification-spike
+    evidence: []
+  - id: M3-secure-setup-core
+    status: blocked
+    depends_on:
+      - M2-build-foundation
+    evidence: []
+  - id: M4-radio-dmr
+    status: blocked
+    depends_on:
+      - M3-secure-setup-core
+    evidence: []
+  - id: M5-aprs-meshcore
+    status: blocked
+    depends_on:
+      - M4-radio-dmr
+    evidence: []
+  - id: M6-connectivity-recovery
+    status: blocked
+    depends_on:
+      - M5-aprs-meshcore
+    evidence: []
+  - id: M7-pilot-release
+    status: blocked
+    depends_on:
+      - M6-connectivity-recovery
+    evidence: []

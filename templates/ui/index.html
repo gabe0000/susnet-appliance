@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SusNet appliance setup template</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to setup</a>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">SN</span>
+        <div>
+          <p>Raspberry Pi appliance</p>
+          <h1>SusNet setup</h1>
+        </div>
+      </div>
+      <div class="status-row" aria-label="Appliance status">
+        <span class="status" data-state="good">Private connection</span>
+        <span class="status" data-state="warn">RF inhibited</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="panel" aria-label="Setup progress">
+        <ol class="steps">
+          <li><span class="step-number">1</span><span>System check</span></li>
+          <li aria-current="step"><span class="step-number">2</span><span>Operator identity</span></li>
+          <li><span class="step-number">3</span><span>Radio hardware</span></li>
+          <li><span class="step-number">4</span><span>Digital networks</span></li>
+          <li><span class="step-number">5</span><span>Review and apply</span></li>
+        </ol>
+      </nav>
+
+      <main class="panel" id="main">
+        <div class="panel-body">
+          <p class="eyebrow">Step 2 of 5</p>
+          <h2>Operator identity</h2>
+          <p class="lede">Enter identifiers owned by this operator. Saved credentials are never shown again.</p>
+
+          <form action="#" method="post">
+            <div class="form-grid">
+              <div class="field">
+                <label for="callsign">Amateur-radio callsign</label>
+                <input id="callsign" name="callsign" autocomplete="off" placeholder="CALLSIGN" required>
+                <small>Uppercase letters and digits only.</small>
+              </div>
+              <div class="field">
+                <label for="node-number">AllStar node number</label>
+                <input id="node-number" name="node-number" inputmode="numeric" autocomplete="off" placeholder="000000" required>
+                <small>Use a node assigned to this operator.</small>
+              </div>
+              <div class="field field-full">
+                <label for="node-password">AllStar node password</label>
+                <input id="node-password" name="node-password" type="password" autocomplete="new-password" required>
+                <small>After saving, the interface reports only whether it is configured.</small>
+              </div>
+            </div>
+
+            <aside class="callout">
+              <strong>RF remains inhibited.</strong> Identity setup does not enable transmission. Hardware detection and acceptance are separate steps.
+            </aside>
+
+            <dl class="summary">
+              <div><dt>Configuration</dt><dd>Draft</dd></div>
+              <div><dt>AllStar registration</dt><dd>Not tested</dd></div>
+              <div><dt>Transmit path</dt><dd>Blocked pending hardware acceptance</dd></div>
+            </dl>
+
+            <div class="actions">
+              <button class="button" type="button">Save draft</button>
+              <button class="button button-primary" type="submit">Review changes</button>
+            </div>
+            <p class="live-status" role="status" aria-live="polite">No changes applied.</p>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

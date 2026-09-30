@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "components": {
+    "asterisk": {
+      "sections": ["public-node-template", "private-usrp-template"],
+      "fields": ["rxchannel", "duplex", "functions", "telemetry"]
+    },
+    "analog_bridge": {
+      "sections": ["GENERAL", "AMBE_AUDIO", "USRP"],
+      "fields": ["logLevel", "address", "txPort", "rxPort", "ambeMode"]
+    },
+    "mmdvm_bridge": {
+      "sections": ["General", "DMR", "DMR Network"],
+      "fields": ["Enable", "Address", "Port", "Slot1", "Slot2"]
+    },
+    "aprs": {
+      "sections": ["connection", "messaging", "announcements"],
+      "fields": ["enabled", "endpoint_ref", "filter", "announcement_scope"]
+    },
+    "meshcore": {
+      "sections": ["device", "profile", "messaging"],
+      "fields": ["usb_binding", "region", "firmware_hash", "enabled"]
+    },
+    "tts": {
+      "sections": ["engine", "routing", "limits"],
+      "fields": ["enabled", "voice", "max_seconds", "rate_limit"]
+    }
+  }
+}

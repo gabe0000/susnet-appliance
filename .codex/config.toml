@@ -1,0 +1,57 @@
+# Loaded only after the developer explicitly trusts this repository.
+default_permissions = ":workspace"
+web_search = "cached"
+
+[shell_environment_policy]
+ignore_default_excludes = false
+
+[shell_environment_policy.filters]
+"PATH" = "include"
+"LANG" = "include"
+"LC_*" = "include"
+"TERM" = "include"
+"SUSNET_LAB_*" = "include"
+"*" = "exclude"
+
+[mcp_servers.susnet-lab]
+command = "python3"
+args = ["tools/susnet_lab_mcp/server.py"]
+cwd = "."
+enabled = false
+required = false
+startup_timeout_sec = 10
+tool_timeout_sec = 120
+default_tools_approval_mode = "writes"
+env_vars = ["SUSNET_LAB_HOST", "SUSNET_LAB_USER", "SUSNET_LAB_EXPECTED_ID", "SUSNET_LAB_KNOWN_HOSTS", "SUSNET_LAB_IDENTITY_FILE"]
+enabled_tools = [
+  "get_lab_identity",
+  "get_hardware_inventory",
+  "get_service_health",
+  "get_sanitized_logs",
+  "list_test_runs",
+  "get_test_evidence",
+  "install_candidate",
+  "run_qualification_test",
+  "reboot_test_pi",
+  "restore_baseline",
+  "run_guarded_rf_test",
+  "flash_heltec_firmware",
+]
+
+[mcp_servers.susnet-lab.tools.get_lab_identity]
+approval_mode = "auto"
+
+[mcp_servers.susnet-lab.tools.get_hardware_inventory]
+approval_mode = "auto"
+
+[mcp_servers.susnet-lab.tools.get_service_health]
+approval_mode = "auto"
+
+[mcp_servers.susnet-lab.tools.get_sanitized_logs]
+approval_mode = "auto"
+
+[mcp_servers.susnet-lab.tools.list_test_runs]
+approval_mode = "auto"
+
+[mcp_servers.susnet-lab.tools.get_test_evidence]
+approval_mode = "auto"

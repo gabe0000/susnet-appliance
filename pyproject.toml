@@ -1,0 +1,10 @@
+[project]
+name = "susnet-agent-bootstrap"
+version = "0.1.0"
+description = "Agent bootstrap and constrained lab tooling for the SusNet Pi appliance"
+requires-python = ">=3.11"
+
+[tool.susnet]
+plan = "docs/susnet-appliance/PLAN.md"
+status = "docs/IMPLEMENTATION_STATUS.yaml"
+reference_manifest = "reference/manifest.yaml"

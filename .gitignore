@@ -1,0 +1,14 @@
+# Local-only notes that may contain personalized recovery hints.
+private/
+
+# Local rollback archives can contain personalized application data.
+backups/
+
+# SusNet AI-agent bootstrap outputs and local lab state.
+.venv/
+.susnet-lab/
+build/
+dist/
+__pycache__/
+*.pyc
+.codex-log/
